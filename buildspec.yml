@@ -15,4 +15,4 @@ phases:
     commands:
       - echo "post_build started"
       - aws s3 sync public/ $BUCKET_NAME --exclude "*.map" --acl public-read --delete
-      - aws cloudfront create-invalidation --distribution-id E6Q298DBWSM3X
+      - aws cloudfront create-invalidation --distribution-id E6Q298DBWSM3X --paths "/*"
